@@ -3,11 +3,16 @@
   <head>
     <!-- Encoding and scaling parameters -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initiale-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initiale-scale=1.0, user-scalable=yes"
+    />
     <!-- Page description -->
     <title>HTML</title>
-    <meta name="description" content="" />
-
+    <meta
+      name="description"
+      content="My github profil with nice zooming animation"
+    />
     <!-- Name of web application (only should be used if the website is used as an app) -->
     <meta name="application-name" content="Application Name" />
     <!-- Browser styling -->
@@ -98,13 +103,18 @@
     </style>
   </head>
   <body>
-    <div class="zoom_animation">
+    <div class="zoom_animation desk">
       <img
         class="atom_background"
         src="assets/Asset 2.png"
         alt="Foreground animation about quantum"
       />
     </div>
+    <div class="zoom_animation mobile">
+      <div class="right anim_bloc"></div>
+      <div class="left anim_bloc"></div>
+    </div>
+
     <header>
       <!-- Header content goes here -->
     </header>
@@ -140,12 +150,12 @@
     <footer>
       <!-- Footer content goes here -->
     </footer>
-
     <script type="text/javascript">
       window.addEventListener("scroll", function () {
         var to_top = window.scrollY; //pageYOffset;
         //console.log(to_top);
         animate_fore(to_top);
+        animate_mobile(to_top);
       });
 
       function promptf() {
@@ -156,13 +166,22 @@
       function zoomIn() {}
 
       function animate_fore(to_top) {
-        var zoom_animation = document.querySelector(".zoom_animation");
+        var object = document.querySelector(".zoom_animation");
         let ratio = 0.002;
         let scale = 1;
 
         scale += ratio * to_top;
 
-        zoom_animation.style.transform = "scale(" + scale + ")";
+        object.style.transform = "scale(" + scale + ")";
+      }
+      function animate_mobile(to_top) {
+        var object = document.querySelector(".anim_bloc");
+        var left_object = document.querySelector(".left");
+        let ratio = 0.9;
+        let left = 0; //200;
+        left += ratio * to_top;
+        object.style.left = left + "px";
+        left_object.style.right = left + "px";
       }
     </script>
   </body>
