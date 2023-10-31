@@ -54,9 +54,16 @@ main{
     width: 90%;
     max-width: 800px;
     margin: auto;
-    text-align: center;
+}
+section{
+    position: relative;
 }
 
+.fixed_down{
+    position: sticky;
+    top: 45vh;
+
+}
 
 .zoom_animation{
     position: fixed;
@@ -70,8 +77,35 @@ main{
     
 }
 .atom_background{
+    position: absolute;
     width:100%;
     margin-left: -50px;
+    margin-top: -80px;
+}
+.formula_1{
+    width: 600px;
+    top:250px;
+    left:200px;
+}
+.formula_2{
+    width: 350px;
+    top:250px;
+    right:200px;
+}
+.formula_3{
+    width: 600px;
+    bottom:300px;
+    right:-50px;
+}
+.formula_4{
+    width: 450px;
+    bottom:100px;
+    left:200px;
+}
+.formula_5{
+    width: 200px;
+    bottom:400px;
+    left:200px;
 }
 
 .anim_bloc{
@@ -94,7 +128,8 @@ main{
 }
 
 .content_full{
-    height:2000px;
+    height:700px;
+    position: relative;
 }
 
 .desk{

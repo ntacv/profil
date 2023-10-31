@@ -103,14 +103,31 @@
     </style>
   </head>
   <body>
-    <div class="zoom_animation desk">
+    <div class="zoom_animation">
       <img
         class="atom_background"
         src="assets/Asset 2.png"
         alt="Foreground animation about quantum"
       />
+      <img
+        class="atom_background formula_1"
+        src="assets/formula/formula_quantum (1).svg"
+      /><img
+        class="atom_background formula_2"
+        src="assets/formula/formula_quantum (2).svg"
+      /><img
+        class="atom_background formula_3"
+        src="assets/formula/formula_quantum (3).svg"
+      /><img
+        class="atom_background formula_4"
+        src="assets/formula/formula_quantum (4).svg"
+      /><img
+        class="atom_background formula_5"
+        src="assets/formula/formula_quantum (5).svg"
+      />
     </div>
-    <div class="zoom_animation mobile">
+
+    <div class="zoom_animation mobile" style="display: none">
       <div class="right anim_bloc"></div>
       <div class="left anim_bloc"></div>
     </div>
@@ -135,13 +152,41 @@
       <section>
         <!-- Section 1 content -->
 
-        <h1>Nathan Choukroun</h1>
-        <p>My github: <a href="">ntacv</a></p>
+        <div class="content_full">
+          <div class="fixed_down" style="text-align: center">
+            <h1>Nathan Choukroun</h1>
+            <p>
+              My github:
+              <a href="https://github.com/ntacv" target="_blank">ntacv</a>
+            </p>
+          </div>
+        </div>
         <div class="content_full"></div>
       </section>
 
       <section>
         <!-- Section 2 content -->
+        <p>Play with the animation:</p>
+        <input
+          type="checkbox"
+          id="start_from_0"
+          name="start_from_0"
+          value="Start from 0"
+        />
+        <label for="start_from_0" onclick="check()">Start from 0</label>
+        <div class="onclick">hey</div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cum
+          quas quod totam, voluptas ex doloremque unde quis aut incidunt! Totam
+          dicta nisi harum ipsa perspiciatis nam, nulla laborum rem!
+        </p>
+        <div class="content_full"></div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cum
+          quas quod totam, voluptas ex doloremque unde quis aut incidunt! Totam
+          dicta nisi harum ipsa perspiciatis nam, nulla laborum rem!
+        </p>
+        <div class="content_full"></div>
       </section>
 
       <!-- More sections if needed -->
@@ -158,21 +203,68 @@
         animate_mobile(to_top);
       });
 
+      var start_from_0_element = document.querySelector("input[start_from_0]");
+
+      function check() {
+        start_from_0_element.checked = true;
+      }
+      var start_from_0 = false;
+      if (start_from_0_element.checked) {
+        document.querySelector(".onclick").innerHTML = "checked";
+        console.log("checked");
+        start_from_0 = true;
+      } else {
+        document.querySelector(".onclick").innerHTML = "not checked";
+        console.log("not checked");
+        start_from_0 = false;
+      }
+
       function promptf() {
         var promptx = prompt("text");
         console.log(promptx);
       }
 
       function zoomIn() {}
+      function animate_ratio(to_top, to_scale = 1, to_x = 0, to_y = 0) {
+        let scale = 1;
+        if (start_from_0) {
+          scale = 0;
+        }
+        let ratio = 0.002 * to_scale; //0.002
+        let ratio_left = to_x * 0.2; //200;
+        let ratio_top = to_y * 0.2; //200;
+        let left = 0; //200;
+        let top = 0; //200;
+        scale += ratio * to_top;
+        left += ratio_left * to_top;
+        top += ratio_top * to_top;
+        var transform_txt =
+          "scale(" +
+          scale +
+          ")" +
+          "translateX(" +
+          left +
+          "px) translateY(" +
+          top +
+          "px)";
+        //console.log(transform_txt);
+        return transform_txt;
+      }
 
       function animate_fore(to_top) {
         var object = document.querySelector(".zoom_animation");
-        let ratio = 0.002;
-        let scale = 1;
+        var formula_1 = document.querySelector(".formula_1");
+        var formula_2 = document.querySelector(".formula_2");
+        var formula_3 = document.querySelector(".formula_3");
+        var formula_4 = document.querySelector(".formula_4");
+        var formula_5 = document.querySelector(".formula_5");
 
-        scale += ratio * to_top;
-
-        object.style.transform = "scale(" + scale + ")";
+        object.style.transform = animate_ratio(to_top, 1, 0, 0);
+        formula_1.style.transform = animate_ratio(to_top, 1, -5, -1);
+        formula_2.style.transform = animate_ratio(to_top, 1, 4, -1);
+        formula_3.style.transform = animate_ratio(to_top, 1, 5, 1);
+        formula_4.style.transform = animate_ratio(to_top, 1, -2, 1);
+        formula_5.style.transform = animate_ratio(to_top, 1, -4, 0);
       }
       function animate_mobile(to_top) {
         var object = document.querySelector(".anim_bloc");
