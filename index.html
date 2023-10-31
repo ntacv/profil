@@ -259,6 +259,22 @@
         var formula_4 = document.querySelector(".formula_4");
         var formula_5 = document.querySelector(".formula_5");
 
+        if (to_top > 1000) {
+          object.style.display = "none";
+          formula_1.style.display = "none";
+          formula_2.style.display = "none";
+          formula_3.style.display = "none";
+          formula_4.style.display = "none";
+          formula_5.style.display = "none";
+        } else {
+          object.style.display = "block";
+          formula_1.style.display = "block";
+          formula_2.style.display = "block";
+          formula_3.style.display = "block";
+          formula_4.style.display = "block";
+          formula_5.style.display = "block";
+        }
+
         object.style.transform = animate_ratio(to_top, 1, 0, 0);
         formula_1.style.transform = animate_ratio(to_top, 1, -5, -1);
         formula_2.style.transform = animate_ratio(to_top, 1, 4, -1);
