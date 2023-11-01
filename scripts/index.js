@@ -78,10 +78,13 @@ Lang_percent.defaultProps = {
 function Lang_list() {
   return (
     <>
+      Type this <Code_text color="light">npm install</Code_text> command
+      <br />
+      <br />
+      <Code_text>Languages I learned: </Code_text>
+      <br />
+      <br />
       <ul>
-        Type this <Code_text color="light">npm install</Code_text> command
-        <br />
-        <br />
         <Lang_percent color="#e65127" percent="90">
           &lt;html&gt; pretty much a &lt;master/&gt; &lt;/html&gt;
         </Lang_percent>
@@ -106,6 +109,9 @@ function Lang_list() {
           Main&#40;&#41; &#125;
         </Lang_percent>
       </ul>
+      <br />
+      <br />
+      <Code_text>What I like to do: </Code_text>
     </>
   );
 }
