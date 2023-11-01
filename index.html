@@ -167,14 +167,16 @@
       <section>
         <!-- Section 2 content -->
         <p>Play with the animation:</p>
-        <input
-          type="checkbox"
-          id="start_from_0"
-          name="start_from_0"
-          value="Start from 0"
-        />
-        <label for="start_from_0" onclick="check()">Start from 0</label>
-        <div class="onclick">hey</div>
+        <label for="start_from_0" onclick="check()">
+          <input
+            type="checkbox"
+            id="start_from_0"
+            name="start_from_0"
+            value="Start from 0"
+          />
+          Start from 0</label
+        >
+        <div class="update_checked">hey</div>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cum
           quas quod totam, voluptas ex doloremque unde quis aut incidunt! Totam
@@ -203,20 +205,19 @@
         animate_mobile(to_top);
       });
 
-      var start_from_0_element = document.querySelector("input[start_from_0]");
+      var start_from_0_element = document.querySelector("#start_from_0");
+      var start_from_0 = false;
+      var update_checked = document.querySelector(".update_checked");
 
       function check() {
-        start_from_0_element.checked = true;
-      }
-      var start_from_0 = false;
-      if (start_from_0_element.checked) {
-        document.querySelector(".onclick").innerHTML = "checked";
-        console.log("checked");
-        start_from_0 = true;
-      } else {
-        document.querySelector(".onclick").innerHTML = "not checked";
-        console.log("not checked");
-        start_from_0 = false;
+        console.log(start_from_0_element.checked);
+        if (start_from_0_element.checked) {
+          update_checked.innerHTML = "checked";
+          start_from_0 = true;
+        } else {
+          update_checked.innerHTML = "not checked";
+          start_from_0 = false;
+        }
       }
 
       function promptf() {
