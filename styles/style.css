@@ -127,16 +127,36 @@ section{
     background:blue;
 }
 
-.content_full{
-    height:700px;
+
+
+/**********  CLASSES  **********/
+
+.content_full {
+    height: 700px;
     position: relative;
 }
 
-.desk{
+.desk {
     display: block;
 }
-.mobile{
+
+.mobile {
     display: none;
+}
+
+.container_scrollx {
+    display: flex;
+    column-gap: 50px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    width: 100%;
+}
+.container_flex{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
 }
 
 /**********  MEDIA QUERIES  **********/

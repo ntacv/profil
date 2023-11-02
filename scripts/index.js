@@ -39,6 +39,66 @@ function Title() {
   );
 }
 
+function Card_item(props) {
+  // className="theme-{props.theme}"
+
+  return (
+    <a href={props.href}>
+      <div
+        style={{
+          display: "inline-block",
+          width: "300px",
+          borderRadius: "30px",
+          color: "black",
+          background: "lightgrey",
+          overflow: "hidden",
+        }}
+      >
+        <img
+          src={props.src}
+          style={{
+            width: "100%",
+            height: "180px",
+            objectFit: "cover",
+          }}
+        />
+
+        <div style={{ margin: "10px 20px" }}>{props.children}</div>
+      </div>
+    </a>
+  );
+}
+function Card_container(props) {
+  return (
+    <div
+      className="container_flex"
+      style={{
+        width: "100%",
+        borderRadius: "10px",
+      }}
+    >
+      <Card_item src="https://placehold.co/600x400">Formula 1</Card_item>
+      <Card_item
+        src="assets/images/formula1.webp"
+        href="https://medium.com/@sergioalbertoromero/why-formula-1-is-the-best-sport-to-watch-6a4035c80672"
+      >
+        Formula 1Formula 1 Formula 1 Formula 1 Formula 1 Formula 1 Formula 1
+        Formula 1
+      </Card_item>
+      <Card_item src="https://placehold.co/600x400">Formula 1</Card_item>
+      <Card_item src="assets/images/formula1.webp">Formula 1</Card_item>
+      <Card_item src="https://placehold.co/600x400">Formula 1</Card_item>
+      <Card_item src="assets/images/formula1.webp">Formula 1</Card_item>
+      <Card_item src="https://placehold.co/600x400">Formula 1</Card_item>
+      <Card_item src="assets/images/formula1.webp">Formula 1</Card_item>
+      <Card_item src="https://placehold.co/600x400">Formula 1</Card_item>
+      <Card_item src="assets/images/formula1.webp">Formula 1</Card_item>
+      <Card_item src="https://placehold.co/600x400">Formula 1</Card_item>
+      <Card_item src="assets/images/formula1.webp">Formula 1</Card_item>
+    </div>
+  );
+}
+
 function Lang_percent(props) {
   return (
     <>
@@ -84,34 +144,35 @@ function Lang_list() {
       <Code_text>Languages I learned: </Code_text>
       <br />
       <br />
-      <ul>
-        <Lang_percent color="#e65127" percent="90">
-          &lt;html&gt; pretty much a &lt;master/&gt; &lt;/html&gt;
-        </Lang_percent>
-        <Lang_percent color="#0c73b8" percent="20">
-          css &#123; experience: intermediate expert; &#125;
-        </Lang_percent>
-        <Lang_percent color="#f7df1e" percent="50">
-          if &#40; javascript &#41; &#123; it is kind of the easiest; &#125;
-        </Lang_percent>
-        <Lang_percent color="#8d96c0" percent="50">
-          &lt;?php&gt; $_GLOBAL['EatCookies'] = "cause it's good"; ?&gt;
-        </Lang_percent>
-        <Lang_percent color="#0035FF" percent="50">
-          from &#40; python &#41; import * ofMyKnowledge
-        </Lang_percent>
-        <Lang_percent color="#212121" percent="50" lang_code="react">
-          function React&#40;&#41; &#123; return "can code this with react"
-          &#125;
-        </Lang_percent>
-        <Lang_percent color="#813084" percent="50" lang_code="react">
-          namespace C# &#123; class public default set static void
-          Main&#40;&#41; &#125;
-        </Lang_percent>
-      </ul>
+      <Lang_percent color="#e65127" percent="90">
+        &lt;html&gt; pretty much a &lt;master/&gt; &lt;/html&gt;
+      </Lang_percent>
+      <Lang_percent color="#0c73b8" percent="20">
+        css &#123; experience: intermediate expert; &#125;
+      </Lang_percent>
+      <Lang_percent color="#f7df1e" percent="50">
+        if &#40; javascript &#41; &#123; it is kind of the easiest; &#125;
+      </Lang_percent>
+      <Lang_percent color="#8d96c0" percent="50">
+        &lt;?php&gt; $_GLOBAL['EatCookies'] = "cause it's good"; ?&gt;
+      </Lang_percent>
+      <Lang_percent color="#0035FF" percent="50">
+        from &#40; python &#41; import * ofMyKnowledge
+      </Lang_percent>
+      <Lang_percent color="#212121" percent="50" lang_code="react">
+        function React&#40;&#41; &#123; return "can code this with react" &#125;
+      </Lang_percent>
+      <Lang_percent color="#813084" percent="50" lang_code="react">
+        namespace C# &#123; class public default set static void Main&#40;&#41;
+        &#125;
+      </Lang_percent>
       <br />
       <br />
       <Code_text>What I like to do: </Code_text>
+      <Card_container />
+      <br />
+      <br />
+      <Code_text>The projects I have done: </Code_text>
     </>
   );
 }
