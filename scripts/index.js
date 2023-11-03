@@ -1,4 +1,5 @@
 // import { val_const } from "./Code_text.js";
+import { MDBBtn, MDBIcon } from "mdb-react-ui-kit";
 
 //If you write your own code, remember hex color shortcuts (eg., #fff, #000)
 // returned value: (String) rgba(251,175,255,1)
@@ -43,7 +44,7 @@ function Card_item(props) {
   // className="theme-{props.theme}"
 
   return (
-    <a href={props.href}>
+    <a href={props.href} target="_blank">
       <div
         style={{
           display: "inline-block",
@@ -55,7 +56,11 @@ function Card_item(props) {
         }}
       >
         <img
-          src={props.src}
+          src={
+            props.src
+              ? "assets/images/" + props.src
+              : "assets/images/formula1.webp"
+          }
           style={{
             width: "100%",
             height: "180px",
@@ -63,7 +68,9 @@ function Card_item(props) {
           }}
         />
 
-        <div style={{ margin: "10px 20px" }}>{props.children}</div>
+        <div style={{ margin: "10px 20px" }}>
+          {props.children ? props.children : "Card"}
+        </div>
       </div>
     </a>
   );
@@ -77,24 +84,7 @@ function Card_container(props) {
         borderRadius: "10px",
       }}
     >
-      <Card_item src="https://placehold.co/600x400">Formula 1</Card_item>
-      <Card_item
-        src="assets/images/formula1.webp"
-        href="https://medium.com/@sergioalbertoromero/why-formula-1-is-the-best-sport-to-watch-6a4035c80672"
-      >
-        Formula 1Formula 1 Formula 1 Formula 1 Formula 1 Formula 1 Formula 1
-        Formula 1
-      </Card_item>
-      <Card_item src="https://placehold.co/600x400">Formula 1</Card_item>
-      <Card_item src="assets/images/formula1.webp">Formula 1</Card_item>
-      <Card_item src="https://placehold.co/600x400">Formula 1</Card_item>
-      <Card_item src="assets/images/formula1.webp">Formula 1</Card_item>
-      <Card_item src="https://placehold.co/600x400">Formula 1</Card_item>
-      <Card_item src="assets/images/formula1.webp">Formula 1</Card_item>
-      <Card_item src="https://placehold.co/600x400">Formula 1</Card_item>
-      <Card_item src="assets/images/formula1.webp">Formula 1</Card_item>
-      <Card_item src="https://placehold.co/600x400">Formula 1</Card_item>
-      <Card_item src="assets/images/formula1.webp">Formula 1</Card_item>
+      {props.children}
     </div>
   );
 }
@@ -138,7 +128,6 @@ Lang_percent.defaultProps = {
 function Lang_list() {
   return (
     <>
-      Type this <Code_text color="light">npm install</Code_text> command
       <br />
       <br />
       <Code_text>Languages I learned: </Code_text>
@@ -148,7 +137,7 @@ function Lang_list() {
         &lt;html&gt; pretty much a &lt;master/&gt; &lt;/html&gt;
       </Lang_percent>
       <Lang_percent color="#0c73b8" percent="20">
-        css &#123; experience: intermediate expert; &#125;
+        .css &#123; experience: intermediate expert; &#125;
       </Lang_percent>
       <Lang_percent color="#f7df1e" percent="50">
         if &#40; javascript &#41; &#123; it is kind of the easiest; &#125;
@@ -168,11 +157,51 @@ function Lang_list() {
       </Lang_percent>
       <br />
       <br />
-      <Code_text>What I like to do: </Code_text>
-      <Card_container />
-      <br />
-      <br />
       <Code_text>The projects I have done: </Code_text>
+      <br />
+      <br />
+      <br />
+      <Card_container>
+        <Card_item src="ntacv.png" href="views/recursivness">
+          ntacv.github.com
+        </Card_item>
+        <Card_item src="exposit.png" href="https://exposit.fr">
+          Exposit.fr
+        </Card_item>
+        <Card_item src="rogererrera.png" href="http://rogererrera.fr">
+          RogerErrera.fr
+        </Card_item>
+        <Card_item src="enta.png" href="https://e-nta.fr">
+          Archives
+        </Card_item>
+        <Card_item src="ntacv.png" href="https://github.com/ntacv">
+          My <i>not done</i> projects
+        </Card_item>
+      </Card_container>
+      <br />
+      <br />
+      <Code_text>What I like to do: </Code_text>
+      <br />
+      <br />
+      <br />
+      <Card_container>
+        <Card_item src="coding.jpg">Coding</Card_item>
+        <Card_item
+          src="formula1.webp"
+          href="https://medium.com/@sergioalbertoromero/why-formula-1-is-the-best-sport-to-watch-6a4035c80672"
+        >
+          Formula 1
+        </Card_item>
+        <Card_item src="simracing.jpg">Sim Racing</Card_item>
+        <Card_item src="illustrator.webp">Adobe Illustrator</Card_item>
+        <Card_item src=""></Card_item>
+      </Card_container>
+      <br />
+      <br />
+      <Code_text>To contact me: </Code_text>
+      <br />
+      <br />
+      <br />
     </>
   );
 }
