@@ -88,6 +88,41 @@ function Card_container(props) {
     </div>
   );
 }
+function Social_link(props) {
+  return (
+    <a href={props.children} target="_blank">
+      <img
+        style={{
+          filter: "grayscale(100%)",
+        }}
+        src={
+          props.src
+            ? "assets/images/socials/" + props.src
+            : "assets/images/socials/site.png"
+        }
+      />
+    </a>
+  );
+}
+function Socials(props) {
+  return (
+    <div style={{ display: "flex", gap: 20 }}>
+      <Social_link>https://e-nta.fr</Social_link>
+      <Social_link src="facebook.png">
+        https://www.facebook.com/ntackn
+      </Social_link>
+
+      <Social_link src="insta.png">
+        https://www.instagram.com/ntacv/
+      </Social_link>
+      <Social_link src="in.png">
+        https://www.linkedin.com/in/nathanchoukroun/
+      </Social_link>
+      <Social_link src="github.png">https://github.com/ntacv</Social_link>
+      <Social_link src="codepen.png">https://codepen.io/Natroun</Social_link>
+    </div>
+  );
+}
 
 function Lang_percent(props) {
   return (
@@ -200,7 +235,7 @@ function Lang_list() {
       <Code_text>To contact me: </Code_text>
       <br />
       <br />
-      <br />
+      <Socials></Socials>
     </>
   );
 }
