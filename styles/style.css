@@ -20,6 +20,7 @@
     --line-height: 1.5;
 }
 
+
 body {
     margin: 0;
     font: var(--font-size) var(--font-family);
@@ -73,6 +74,7 @@ section{
     width: 100%;
     height: 100%;
     
+    transition: all 0.2s ease;
 }
 .atom_background{
     position: absolute;

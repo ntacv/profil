@@ -1,5 +1,5 @@
 // import { val_const } from "./Code_text.js";
-import { MDBBtn, MDBIcon } from "mdb-react-ui-kit";
+//import { MDBBtn, MDBIcon } from "mdb-react-ui-kit";
 
 //If you write your own code, remember hex color shortcuts (eg., #fff, #000)
 // returned value: (String) rgba(251,175,255,1)
@@ -163,7 +163,7 @@ function Lang_list() {
       <br />
       <Card_container>
         <Card_item src="ntacv.png" href="views/recursivness">
-          ntacv.github.com
+          My profil
         </Card_item>
         <Card_item src="exposit.png" href="https://exposit.fr">
           Exposit.fr
@@ -174,7 +174,7 @@ function Lang_list() {
         <Card_item src="enta.png" href="https://e-nta.fr">
           Archives
         </Card_item>
-        <Card_item src="ntacv.png" href="https://github.com/ntacv">
+        <Card_item src="github.png" href="https://github.com/ntacv">
           My <i>not done</i> projects
         </Card_item>
       </Card_container>
@@ -194,7 +194,6 @@ function Lang_list() {
         </Card_item>
         <Card_item src="simracing.jpg">Sim Racing</Card_item>
         <Card_item src="illustrator.webp">Adobe Illustrator</Card_item>
-        <Card_item src=""></Card_item>
       </Card_container>
       <br />
       <br />
