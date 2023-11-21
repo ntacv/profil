@@ -209,6 +209,9 @@ function Lang_list() {
         <Card_item src="enta.png" href="https://e-nta.fr">
           Archives
         </Card_item>
+        <Card_item src="bobby.jpg" href="">
+          Projet mécatronique
+        </Card_item>
         <Card_item src="github.png" href="https://github.com/ntacv">
           My <i>not done</i> projects
         </Card_item>
